@@ -1,0 +1,314 @@
+[
+  {
+    "id": 1,
+    "name_cn": "运动物体的重量",
+    "name_en": "Weight of moving object",
+    "desc_cn": "重力场中运动物体受的重力",
+    "desc_en": "Gravity force exerted by an object moving in gravitational field",
+    "opposite_id": 2
+  },
+  {
+    "id": 2,
+    "name_cn": "静止物体的重量",
+    "name_en": "Weight of stationary object",
+    "desc_cn": "重力场中静止物体受的重力",
+    "desc_en": "Gravity force exerted by an object stationary in gravitational field",
+    "opposite_id": 1
+  },
+  {
+    "id": 3,
+    "name_cn": "运动物体的长度",
+    "name_en": "Length of moving object",
+    "desc_cn": "运动物体任意线性尺寸",
+    "desc_en": "Any linear dimension of a moving object",
+    "opposite_id": 4
+  },
+  {
+    "id": 4,
+    "name_cn": "静止物体的长度",
+    "name_en": "Length of stationary object",
+    "desc_cn": "静止物体任意线性尺寸",
+    "desc_en": "Any linear dimension of a stationary object",
+    "opposite_id": 3
+  },
+  {
+    "id": 5,
+    "name_cn": "运动物体的面积",
+    "name_en": "Area of moving object",
+    "desc_cn": "运动物体的表面/部分表面积",
+    "desc_en": "Whole or partial surface area of moving object",
+    "opposite_id": 6
+  },
+  {
+    "id": 6,
+    "name_cn": "静止物体的面积",
+    "name_en": "Area of stationary object",
+    "desc_cn": "静止物体的表面/部分表面积",
+    "desc_en": "Whole or partial surface area of stationary object",
+    "opposite_id": 5
+  },
+  {
+    "id": 7,
+    "name_cn": "运动物体的体积",
+    "name_en": "Volume of moving object",
+    "desc_cn": "运动物体占据的空间",
+    "desc_en": "Space occupied by moving object",
+    "opposite_id": 8
+  },
+  {
+    "id": 8,
+    "name_cn": "静止物体的体积",
+    "name_en": "Volume of stationary object",
+    "desc_cn": "静止物体占据的空间",
+    "desc_en": "Space occupied by stationary object",
+    "opposite_id": 7
+  },
+  {
+    "id": 9,
+    "name_cn": "速度",
+    "name_en": "Speed",
+    "desc_cn": "物体位移速率或过程耗时",
+    "desc_en": "Rate of displacement of object or process duration",
+    "opposite_id": 10
+  },
+  {
+    "id": 10,
+    "name_cn": "力",
+    "name_en": "Force",
+    "desc_cn": "改变物体运动状态的相互作用",
+    "desc_en": "Interaction changing motion state of object",
+    "opposite_id": 9
+  },
+  {
+    "id": 11,
+    "name_cn": "压强/压力",
+    "name_en": "Stress or pressure",
+    "desc_cn": "单位面积受力",
+    "desc_en": "Force per unit area",
+    "opposite_id": 12
+  },
+  {
+    "id": 12,
+    "name_cn": "形状",
+    "name_en": "Shape",
+    "desc_cn": "物体外部轮廓形态",
+    "desc_en": "External contour configuration of object",
+    "opposite_id": 13
+  },
+  {
+    "id": 13,
+    "name_cn": "物体稳定性",
+    "name_en": "Stability of object",
+    "desc_cn": "系统维持原有形态的能力",
+    "desc_en": "Capability of system to retain original form",
+    "opposite_id": 14
+  },
+  {
+    "id": 14,
+    "name_cn": "强度",
+    "name_en": "Strength",
+    "desc_cn": "物体抵抗外力破坏的能力",
+    "desc_en": "Ability to resist damage from external force",
+    "opposite_id": 15
+  },
+  {
+    "id": 15,
+    "name_cn": "运动物体的作用时间",
+    "name_en": "Duration of action of moving object",
+    "desc_cn": "运动物体工作/耐久时长",
+    "desc_en": "Working/durability time of moving object",
+    "opposite_id": 16
+  },
+  {
+    "id": 16,
+    "name_cn": "静止物体的作用时间",
+    "name_en": "Duration of action of stationary object",
+    "desc_cn": "静止物体工作/耐久时长",
+    "desc_en": "Working/durability time of stationary object",
+    "opposite_id": 15
+  },
+  {
+    "id": 17,
+    "name_cn": "温度",
+    "name_en": "Temperature",
+    "desc_cn": "物体冷热程度",
+    "desc_en": "Hot and cold degree of substance",
+    "opposite_id": 18
+  },
+  {
+    "id": 18,
+    "name_cn": "亮度",
+    "name_en": "Illumination",
+    "desc_cn": "光照强度与发光能力",
+    "desc_en": "Light intensity and luminous capacity",
+    "opposite_id": 19
+  },
+  {
+    "id": 19,
+    "name_cn": "运动物体能耗",
+    "name_en": "Energy spent by moving object",
+    "desc_cn": "运动过程消耗能量",
+    "desc_en": "Energy consumed during moving process",
+    "opposite_id": 20
+  },
+  {
+    "id": 20,
+    "name_cn": "静止物体能耗",
+    "name_en": "Energy spent by stationary object",
+    "desc_cn": "静止过程消耗能量",
+    "desc_en": "Energy consumed during stationary process",
+    "opposite_id": 19
+  },
+  {
+    "id": 21,
+    "name_cn": "功率",
+    "name_en": "Power",
+    "desc_cn": "单位时间做功量",
+    "desc_en": "Work done per unit time",
+    "opposite_id": 22
+  },
+  {
+    "id": 22,
+    "name_cn": "能量损失",
+    "name_en": "Loss of energy",
+    "desc_cn": "无用损耗的能量",
+    "desc_en": "Energy lost in ineffective consumption",
+    "opposite_id": 21
+  },
+  {
+    "id": 23,
+    "name_cn": "物质损耗",
+    "name_en": "Loss of substance",
+    "desc_cn": "物料、耗材损耗量",
+    "desc_en": "Consumption loss of raw materials",
+    "opposite_id": 24
+  },
+  {
+    "id": 24,
+    "name_cn": "信息损耗",
+    "name_en": "Loss of information",
+    "desc_cn": "数据、信号丢失",
+    "desc_en": "Loss of data or signal information",
+    "opposite_id": 23
+  },
+  {
+    "id": 25,
+    "name_cn": "时间损耗",
+    "name_en": "Loss of time",
+    "desc_cn": "无效消耗的时间",
+    "desc_en": "Time wasted in ineffective operation",
+    "opposite_id": 26
+  },
+  {
+    "id": 26,
+    "name_cn": "物质总量",
+    "name_en": "Quantity of substance",
+    "desc_cn": "系统内物料总数量",
+    "desc_en": "Total amount of material inside system",
+    "opposite_id": 27
+  },
+  {
+    "id": 27,
+    "name_cn": "可靠性",
+    "name_en": "Reliability",
+    "desc_cn": "系统完成预定功能概率",
+    "desc_en": "Probability of system finishing preset function",
+    "opposite_id": 28
+  },
+  {
+    "id": 28,
+    "name_cn": "测量精度",
+    "name_en": "Accuracy of measurement",
+    "desc_cn": "测量值与真实值偏差",
+    "desc_en": "Deviation between measured value and true value",
+    "opposite_id": 29
+  },
+  {
+    "id": 29,
+    "name_cn": "制造精度",
+    "name_en": "Accuracy of manufacturing",
+    "desc_cn": "产品实际尺寸和设计偏差",
+    "desc_en": "Deviation between actual size and design",
+    "opposite_id": 30
+  },
+  {
+    "id": 30,
+    "name_cn": "作用于物体有害因素",
+    "name_en": "Harmful factors acting on object",
+    "desc_cn": "外界环境带来的负面影响",
+    "desc_en": "Negative influence from external environment",
+    "opposite_id": 31
+  },
+  {
+    "id": 31,
+    "name_cn": "物体产生有害副作用",
+    "name_en": "Harmful side effects generated by object",
+    "desc_cn": "产品自身带来的负面效果",
+    "desc_en": "Side effects generated by the object itself",
+    "opposite_id": 30
+  },
+  {
+    "id": 32,
+    "name_cn": "可制造性",
+    "name_en": "Manufacturability",
+    "desc_cn": "产品生产加工难易程度",
+    "desc_en": "Difficulty level of product production",
+    "opposite_id": 33
+  },
+  {
+    "id": 33,
+    "name_cn": "可操作性",
+    "name_en": "Ease of operation",
+    "desc_cn": "使用、操作便捷度",
+    "desc_en": "Convenience degree of operation & usage",
+    "opposite_id": 34
+  },
+  {
+    "id": 34,
+    "name_cn": "可维修性",
+    "name_en": "Repairability",
+    "desc_cn": "故障后检修难易度",
+    "desc_en": "Difficulty of maintenance after failure",
+    "opposite_id": 35
+  },
+  {
+    "id": 35,
+    "name_cn": "适应性/通用性",
+    "name_en": "Adaptability or versatility",
+    "desc_cn": "适配多场景的能力",
+    "desc_en": "Capability to adapt to multiple scenarios",
+    "opposite_id": 36
+  },
+  {
+    "id": 36,
+    "name_cn": "设备复杂度",
+    "name_en": "Device complexity",
+    "desc_cn": "组件数量与控制难度",
+    "desc_en": "Component quantity and control difficulty",
+    "opposite_id": 37
+  },
+  {
+    "id": 37,
+    "name_cn": "控制复杂度",
+    "name_en": "Control complexity",
+    "desc_cn": "监测、管控系统复杂度",
+    "desc_en": "Complexity of monitoring & control system",
+    "opposite_id": 38
+  },
+  {
+    "id": 38,
+    "name_cn": "自动化程度",
+    "name_en": "Degree of automation",
+    "desc_cn": "无人介入运行能力",
+    "desc_en": "Unattended automatic running capacity",
+    "opposite_id": 39
+  },
+  {
+    "id": 39,
+    "name_cn": "生产率",
+    "name_en": "Productivity",
+    "desc_cn": "单位时间产出量",
+    "desc_en": "Output quantity per unit time",
+    "opposite_id": 38
+  }
+]

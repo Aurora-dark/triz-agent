@@ -1,0 +1,476 @@
+[
+  {
+    "id": 1,
+    "type": "parameter",
+    "name": "运动物体的重量",
+    "description": "重力场中运动物体受的重力"
+  },
+  {
+    "id": 2,
+    "type": "parameter",
+    "name": "静止物体的重量",
+    "description": "重力场中静止物体受的重力"
+  },
+  {
+    "id": 3,
+    "type": "parameter",
+    "name": "运动物体的长度",
+    "description": "运动物体任意线性尺寸"
+  },
+  {
+    "id": 4,
+    "type": "parameter",
+    "name": "静止物体的长度",
+    "description": "静止物体任意线性尺寸"
+  },
+  {
+    "id": 5,
+    "type": "parameter",
+    "name": "运动物体的面积",
+    "description": "运动物体的表面/部分表面积"
+  },
+  {
+    "id": 6,
+    "type": "parameter",
+    "name": "静止物体的面积",
+    "description": "静止物体的表面/部分表面积"
+  },
+  {
+    "id": 7,
+    "type": "parameter",
+    "name": "运动物体的体积",
+    "description": "运动物体占据的空间"
+  },
+  {
+    "id": 8,
+    "type": "parameter",
+    "name": "静止物体的体积",
+    "description": "静止物体占据的空间"
+  },
+  {
+    "id": 9,
+    "type": "parameter",
+    "name": "速度",
+    "description": "物体位移速率或过程耗时"
+  },
+  {
+    "id": 10,
+    "type": "parameter",
+    "name": "力",
+    "description": "改变物体运动状态的相互作用"
+  },
+  {
+    "id": 11,
+    "type": "parameter",
+    "name": "压强/压力",
+    "description": "单位面积受力"
+  },
+  {
+    "id": 12,
+    "type": "parameter",
+    "name": "形状",
+    "description": "物体外部轮廓形态"
+  },
+  {
+    "id": 13,
+    "type": "parameter",
+    "name": "物体稳定性",
+    "description": "系统维持原有形态的能力"
+  },
+  {
+    "id": 14,
+    "type": "parameter",
+    "name": "强度",
+    "description": "物体抵抗外力破坏的能力"
+  },
+  {
+    "id": 15,
+    "type": "parameter",
+    "name": "运动物体的作用时间",
+    "description": "运动物体工作/耐久时长"
+  },
+  {
+    "id": 16,
+    "type": "parameter",
+    "name": "静止物体的作用时间",
+    "description": "静止物体工作/耐久时长"
+  },
+  {
+    "id": 17,
+    "type": "parameter",
+    "name": "温度",
+    "description": "物体冷热程度"
+  },
+  {
+    "id": 18,
+    "type": "parameter",
+    "name": "亮度",
+    "description": "光照强度与发光能力"
+  },
+  {
+    "id": 19,
+    "type": "parameter",
+    "name": "运动物体能耗",
+    "description": "运动过程消耗能量"
+  },
+  {
+    "id": 20,
+    "type": "parameter",
+    "name": "静止物体能耗",
+    "description": "静止过程消耗能量"
+  },
+  {
+    "id": 21,
+    "type": "parameter",
+    "name": "功率",
+    "description": "单位时间做功量"
+  },
+  {
+    "id": 22,
+    "type": "parameter",
+    "name": "能量损失",
+    "description": "无用损耗的能量"
+  },
+  {
+    "id": 23,
+    "type": "parameter",
+    "name": "物质损耗",
+    "description": "物料、耗材损耗量"
+  },
+  {
+    "id": 24,
+    "type": "parameter",
+    "name": "信息损耗",
+    "description": "数据、信号丢失"
+  },
+  {
+    "id": 25,
+    "type": "parameter",
+    "name": "时间损耗",
+    "description": "无效消耗的时间"
+  },
+  {
+    "id": 26,
+    "type": "parameter",
+    "name": "物质总量",
+    "description": "系统内物料总数量"
+  },
+  {
+    "id": 27,
+    "type": "parameter",
+    "name": "可靠性",
+    "description": "系统完成预定功能概率"
+  },
+  {
+    "id": 28,
+    "type": "parameter",
+    "name": "测量精度",
+    "description": "测量值与真实值偏差"
+  },
+  {
+    "id": 29,
+    "type": "parameter",
+    "name": "制造精度",
+    "description": "产品实际尺寸和设计偏差"
+  },
+  {
+    "id": 30,
+    "type": "parameter",
+    "name": "作用于物体有害因素",
+    "description": "外界环境带来的负面影响"
+  },
+  {
+    "id": 31,
+    "type": "parameter",
+    "name": "物体产生有害副作用",
+    "description": "产品自身带来的负面效果"
+  },
+  {
+    "id": 32,
+    "type": "parameter",
+    "name": "可制造性",
+    "description": "产品生产加工难易程度"
+  },
+  {
+    "id": 33,
+    "type": "parameter",
+    "name": "可操作性",
+    "description": "使用、操作便捷度"
+  },
+  {
+    "id": 34,
+    "type": "parameter",
+    "name": "可维修性",
+    "description": "故障后检修难易度"
+  },
+  {
+    "id": 35,
+    "type": "parameter",
+    "name": "适应性/通用性",
+    "description": "适配多场景的能力"
+  },
+  {
+    "id": 36,
+    "type": "parameter",
+    "name": "设备复杂度",
+    "description": "组件数量与控制难度"
+  },
+  {
+    "id": 37,
+    "type": "parameter",
+    "name": "控制复杂度",
+    "description": "监测、管控系统复杂度"
+  },
+  {
+    "id": 38,
+    "type": "parameter",
+    "name": "自动化程度",
+    "description": "无人介入运行能力"
+  },
+  {
+    "id": 39,
+    "type": "parameter",
+    "name": "生产率",
+    "description": "单位时间产出量"
+  },
+  {
+    "id": 1,
+    "type": "principle",
+    "name": "分割原理",
+    "description": "拆分为独立部分，便于操作等"
+  },
+  {
+    "id": 2,
+    "type": "principle",
+    "name": "抽取原理",
+    "description": "分离有用或有害部分"
+  },
+  {
+    "id": 3,
+    "type": "principle",
+    "name": "局部质量原理",
+    "description": "改变局部特性适配需求"
+  },
+  {
+    "id": 4,
+    "type": "principle",
+    "name": "非对称原理",
+    "description": "非对称优化性能"
+  },
+  {
+    "id": 5,
+    "type": "principle",
+    "name": "组合原理",
+    "description": "同类物体/功能合并"
+  },
+  {
+    "id": 6,
+    "type": "principle",
+    "name": "多用性原理",
+    "description": "一物实现多个功能"
+  },
+  {
+    "id": 7,
+    "type": "principle",
+    "name": "嵌套原理",
+    "description": "一个物体嵌套进另一个"
+  },
+  {
+    "id": 8,
+    "type": "principle",
+    "name": "配重原理",
+    "description": "附加配重抵消自重"
+  },
+  {
+    "id": 9,
+    "type": "principle",
+    "name": "预先反作用原理",
+    "description": "提前施加反向作用力"
+  },
+  {
+    "id": 10,
+    "type": "principle",
+    "name": "预先作用原理",
+    "description": "提前完成必要操作"
+  },
+  {
+    "id": 11,
+    "type": "principle",
+    "name": "预先防护原理",
+    "description": "提前设置缓冲防护"
+  },
+  {
+    "id": 12,
+    "type": "principle",
+    "name": "等势原理",
+    "description": "消除高度差减少做功"
+  },
+  {
+    "id": 13,
+    "type": "principle",
+    "name": "反向作用原理",
+    "description": "颠倒操作顺序/结构"
+  },
+  {
+    "id": 14,
+    "type": "principle",
+    "name": "曲面化原理",
+    "description": "直线变曲线、平面变曲面"
+  },
+  {
+    "id": 15,
+    "type": "principle",
+    "name": "动态特性原理",
+    "description": "结构可随工况变化形态"
+  },
+  {
+    "id": 16,
+    "type": "principle",
+    "name": "不足或超额行动原理",
+    "description": "做多/做少实现目标"
+  },
+  {
+    "id": 17,
+    "type": "principle",
+    "name": "维数变化原理",
+    "description": "一维变多维拓展空间"
+  },
+  {
+    "id": 18,
+    "type": "principle",
+    "name": "机械振动原理",
+    "description": "利用振动提升效率"
+  },
+  {
+    "id": 19,
+    "type": "principle",
+    "name": "周期性作用原理",
+    "description": "连续动作改为间歇周期动作"
+  },
+  {
+    "id": 20,
+    "type": "principle",
+    "name": "有效持续作用原理",
+    "description": "不间断持续有效工作"
+  },
+  {
+    "id": 21,
+    "type": "principle",
+    "name": "快速通过原理",
+    "description": "高速快速完成有害工序"
+  },
+  {
+    "id": 22,
+    "type": "principle",
+    "name": "变害为利原理",
+    "description": "有害因素转化为有利条件"
+  },
+  {
+    "id": 23,
+    "type": "principle",
+    "name": "反馈原理",
+    "description": "采集结果反向调整输入"
+  },
+  {
+    "id": 24,
+    "type": "principle",
+    "name": "中介物原理",
+    "description": "借助中间媒介过渡"
+  },
+  {
+    "id": 25,
+    "type": "principle",
+    "name": "自服务原理",
+    "description": "物体自我完成辅助功能"
+  },
+  {
+    "id": 26,
+    "type": "principle",
+    "name": "复制原理",
+    "description": "低成本复制品替代原物"
+  },
+  {
+    "id": 27,
+    "type": "principle",
+    "name": "廉价替代原理",
+    "description": "廉价易耗品替代贵重物品"
+  },
+  {
+    "id": 28,
+    "type": "principle",
+    "name": "机械系统替代原理",
+    "description": "非机械方案替换机械结构"
+  },
+  {
+    "id": 29,
+    "type": "principle",
+    "name": "气压/液压原理",
+    "description": "气体液体替代固体零件"
+  },
+  {
+    "id": 30,
+    "type": "principle",
+    "name": "柔性壳体/薄膜原理",
+    "description": "柔性薄膜替代刚性结构"
+  },
+  {
+    "id": 31,
+    "type": "principle",
+    "name": "多孔材料原理",
+    "description": "利用多孔结构减重储料"
+  },
+  {
+    "id": 32,
+    "type": "principle",
+    "name": "颜色改变原理",
+    "description": "改变颜色实现区分/警示"
+  },
+  {
+    "id": 33,
+    "type": "principle",
+    "name": "同质原理",
+    "description": "相邻物体选用同种材质"
+  },
+  {
+    "id": 34,
+    "type": "principle",
+    "name": "抛弃与再生原理",
+    "description": "损耗部件丢弃/自动复原"
+  },
+  {
+    "id": 35,
+    "type": "principle",
+    "name": "参数变化原理",
+    "description": "改变物理参数优化性能"
+  },
+  {
+    "id": 36,
+    "type": "principle",
+    "name": "相变原理",
+    "description": "物态变化实现能量转换"
+  },
+  {
+    "id": 37,
+    "type": "principle",
+    "name": "热膨胀原理",
+    "description": "热胀冷缩实现驱动"
+  },
+  {
+    "id": 38,
+    "type": "principle",
+    "name": "强氧化剂原理",
+    "description": "强化氧化环境提升反应"
+  },
+  {
+    "id": 39,
+    "type": "principle",
+    "name": "惰性环境原理",
+    "description": "惰性环境隔绝有害反应"
+  },
+  {
+    "id": 40,
+    "type": "principle",
+    "name": "复合材料原理",
+    "description": "多种材料复合获得新特性"
+  }
+]
