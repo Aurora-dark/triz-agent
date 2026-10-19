@@ -18,7 +18,7 @@ async def extract_contradiction(req: ExtractRequest):
     task = task_manager.get_task(req.task_id)
     requirement_text = task["requirement_text"]
     
-    model_config = req.model_config or {
+    model_config = req.llm_config or {
         "model_name": LLM_CONFIG["model_name"],
         "temperature": LLM_CONFIG["temperature"],
         "max_tokens": LLM_CONFIG["max_tokens"]

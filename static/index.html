@@ -393,6 +393,51 @@
             content: "💡 ";
         }
 
+        /* ---------- 原理详情折叠 ---------- */
+        .principle-item {
+            background: #f7faff;
+            border: 1px solid #dce8ff;
+            border-radius: 12px;
+            padding: 10px 14px;
+            margin: 8px 0;
+        }
+
+        .principle-item summary {
+            cursor: pointer;
+            color: #0044cc;
+            font-weight: 600;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .principle-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .principle-item summary::before {
+            content: "▸";
+            color: #3a7eff;
+            transition: transform 0.15s;
+        }
+
+        .principle-item[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .principle-item .p-body {
+            margin-top: 8px;
+            padding-left: 16px;
+            font-size: 0.88rem;
+            color: #335e8a;
+            line-height: 1.7;
+        }
+
+        .principle-item .p-body strong {
+            color: #00337a;
+        }
+
         /* ---------- 历史记录 ---------- */
         .history-area .search-box {
             display: flex;
@@ -692,8 +737,31 @@
                 const data = await res.json();
                 const result = data.data;
                 
-                // 🔥 修复：检查是否有匹配，使用 '推荐原理名称' 字段
-                if (result.是否有匹配 && result.推荐原理名称 && result.推荐原理名称.length > 0) {
+                // 优先使用后端返回的原理详情（名称 + 解释 + 案例）
+                const details = result.推荐原理详情 || [];
+                if (result.是否有匹配 && details.length > 0) {
+                    container.innerHTML = `
+                        <div class="matrix-solution">
+                            <strong style="color:#0066cc;"><i class="fas fa-lightbulb"></i> 推荐方案（TRIZ 发明原理）</strong>
+                            <div style="margin-top:6px; font-size:0.8rem; color:#6f8fc0;">
+                                ${result.改善参数} → ${result.恶化参数}
+                            </div>
+                            ${details.map(p => `
+                                <details class="principle-item">
+                                    <summary>原理 ${p.id} · ${p.name}</summary>
+                                    <div class="p-body">
+                                        <div><strong>解释：</strong>${p.explain || '暂无'}</div>
+                                        <div><strong>案例：</strong>${p.case || '暂无'}</div>
+                                    </div>
+                                </details>
+                            `).join('')}
+                            <div style="margin-top:8px; font-size:0.8rem; color:#6f8fc0;">
+                                <i class="fas fa-info-circle"></i> 基于 TRIZ 矛盾矩阵推荐，点击原理查看解释与案例
+                            </div>
+                        </div>
+                    `;
+                } else if (result.是否有匹配 && result.推荐原理名称 && result.推荐原理名称.length > 0) {
+                    // 兼容旧字段
                     container.innerHTML = `
                         <div class="matrix-solution">
                             <strong style="color:#0066cc;"><i class="fas fa-lightbulb"></i> 推荐方案（TRIZ 发明原理）</strong>
@@ -720,9 +788,9 @@
                         <div style="background:#fff3cd; padding:14px 18px; border-radius:12px; border-left:4px solid #ffc107;">
                             <span style="color:#856404;">😕 未找到精确匹配</span>
                             <div style="font-size:0.85rem; margin-top:6px; color:#6f8fc0;">
-                                尝试使用标准参数名：<br/>
-                                改善参数：运动物体的面积（5）<br/>
-                                恶化参数：可操作性（33）
+                                请使用 39 个标准参数名，例如：<br/>
+                                改善参数：19. 运动物体的能耗<br/>
+                                恶化参数：1. 运动物体的重量
                             </div>
                         </div>
                     `;

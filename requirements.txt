@@ -155,3 +155,7 @@ websocket-client==1.8.0
 Werkzeug==2.3.7
 widgetsnbextension==4.0.13
 wordcloud==1.9.4
+openai==2.41.0
+python-dotenv==1.2.2
+jiter==0.15.0
+distro==1.9.0

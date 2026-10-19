@@ -1,0 +1,322 @@
+{
+  "分割": {
+    "id": 1,
+    "name": "分割原理",
+    "name_en": "Segmentation",
+    "explain": "拆分为独立部分，便于操作等",
+    "case": "可折叠手机拆分使用",
+    "tags": "分割、独立部分、操作"
+  },
+  "分离/抽出": {
+    "id": 2,
+    "name": "抽取原理",
+    "name_en": "Extraction",
+    "explain": "分离有用或有害部分",
+    "case": "空调滤网分离灰尘",
+    "tags": "抽取、分离、有害部分"
+  },
+  "局部质量": {
+    "id": 3,
+    "name": "局部质量原理",
+    "name_en": "Local Quality",
+    "explain": "改变局部特性适配需求",
+    "case": "剪刀刀刃淬火强化",
+    "tags": "局部质量、特性改变"
+  },
+  "不对称": {
+    "id": 4,
+    "name": "非对称原理",
+    "name_en": "Asymmetry",
+    "explain": "非对称优化性能",
+    "case": "汽车方向盘非对称",
+    "tags": "非对称、性能优化"
+  },
+  "合并/组合": {
+    "id": 5,
+    "name": "组合原理",
+    "name_en": "Combining",
+    "explain": "同类物体/功能合并",
+    "case": "多功能瑞士军刀",
+    "tags": "组合、合并、集成"
+  },
+  "多功能/通用": {
+    "id": 6,
+    "name": "多用性原理",
+    "name_en": "Universality",
+    "explain": "一物实现多个功能",
+    "case": "手机兼具通讯+摄像",
+    "tags": "多用、多功能、一体化"
+  },
+  "嵌套/叠放": {
+    "id": 7,
+    "name": "嵌套原理",
+    "name_en": "Nested Doll",
+    "explain": "一个物体嵌套进另一个",
+    "case": "伸缩拉杆天线",
+    "tags": "嵌套、伸缩、套装"
+  },
+  "重量补偿": {
+    "id": 8,
+    "name": "配重原理",
+    "name_en": "Anti-Weight",
+    "explain": "附加配重抵消自重",
+    "case": "起重机配重块",
+    "tags": "配重、抵消重量、平衡"
+  },
+  "预先反作用": {
+    "id": 9,
+    "name": "预先反作用原理",
+    "name_en": "Prior Counteraction",
+    "explain": "提前施加反向作用力",
+    "case": "预应力钢筋混凝土",
+    "tags": "预加反力、提前防护"
+  },
+  "预先作用": {
+    "id": 10,
+    "name": "预先作用原理",
+    "name_en": "Prior Action",
+    "explain": "提前完成必要操作",
+    "case": "不干胶提前预涂胶",
+    "tags": "预先加工、前置操作"
+  },
+  "预先防范": {
+    "id": 11,
+    "name": "预先防护原理",
+    "name_en": "Beforehand Cushioning",
+    "explain": "提前设置缓冲防护",
+    "case": "安全帽缓冲内衬",
+    "tags": "缓冲、提前防护"
+  },
+  "等势": {
+    "id": 12,
+    "name": "等势原理",
+    "name_en": "Equipotential",
+    "explain": "消除高度差减少做功",
+    "case": "码头登船桥",
+    "tags": "等势、消除落差"
+  },
+  "反向": {
+    "id": 13,
+    "name": "反向作用原理",
+    "name_en": "Inversion",
+    "explain": "颠倒操作顺序/结构",
+    "case": "倒立刷锅清洁锅底",
+    "tags": "反向、颠倒结构"
+  },
+  "曲面化": {
+    "id": 14,
+    "name": "曲面化原理",
+    "name_en": "Spheroidality",
+    "explain": "直线变曲线、平面变曲面",
+    "case": "拱形桥替代直梁桥",
+    "tags": "曲面、圆弧、流线型"
+  },
+  "动态化": {
+    "id": 15,
+    "name": "动态特性原理",
+    "name_en": "Dynamism",
+    "explain": "结构可随工况变化形态",
+    "case": "折叠桌椅",
+    "tags": "动态变形、自适应"
+  },
+  "局部作用": {
+    "id": 16,
+    "name": "不足或超额行动原理",
+    "name_en": "Partial or Excessive Action",
+    "explain": "做多/做少实现目标",
+    "case": "多喷涂一层漆面",
+    "tags": "过量、减量加工"
+  },
+  "多维化": {
+    "id": 17,
+    "name": "维数变化原理",
+    "name_en": "Transition to New Dimension",
+    "explain": "一维变多维拓展空间",
+    "case": "立体停车场",
+    "tags": "升维、立体布局"
+  },
+  "机械振动": {
+    "id": 18,
+    "name": "机械振动原理",
+    "name_en": "Mechanical Vibration",
+    "explain": "利用振动提升效率",
+    "case": "振动筛分选物料",
+    "tags": "振动、震荡筛选"
+  },
+  "周期性动作": {
+    "id": 19,
+    "name": "周期性作用原理",
+    "name_en": "Periodic Action",
+    "explain": "连续动作改为间歇周期动作",
+    "case": "间歇式洒水喷头",
+    "tags": "周期、间歇运行"
+  },
+  "连续有用动作": {
+    "id": 20,
+    "name": "有效持续作用原理",
+    "name_en": "Continuity of Useful Action",
+    "explain": "不间断持续有效工作",
+    "case": "流水线不间断生产",
+    "tags": "连续作业、不间断"
+  },
+  "快速通过": {
+    "id": 21,
+    "name": "快速通过原理",
+    "name_en": "Rushing Through",
+    "explain": "高速快速完成有害工序",
+    "case": "食品瞬间高温灭菌",
+    "tags": "高速、短时加工"
+  },
+  "变害为利": {
+    "id": 22,
+    "name": "变害为利原理",
+    "name_en": "Blessing in Disguise",
+    "explain": "有害因素转化为有利条件",
+    "case": "余热供暖",
+    "tags": "化害为利、废物利用"
+  },
+  "反馈": {
+    "id": 23,
+    "name": "反馈原理",
+    "name_en": "Feedback",
+    "explain": "采集结果反向调整输入",
+    "case": "温控传感器自动调温",
+    "tags": "反馈、闭环调节"
+  },
+  "中介物": {
+    "id": 24,
+    "name": "中介物原理",
+    "name_en": "Mediator",
+    "explain": "借助中间媒介过渡",
+    "case": "催化剂加速化学反应",
+    "tags": "中介、媒介过渡"
+  },
+  "自服务": {
+    "id": 25,
+    "name": "自服务原理",
+    "name_en": "Self-Service",
+    "explain": "物体自我完成辅助功能",
+    "case": "自动润滑轴承",
+    "tags": "自服务、自给辅助"
+  },
+  "复制": {
+    "id": 26,
+    "name": "复制原理",
+    "name_en": "Copying",
+    "explain": "低成本复制品替代原物",
+    "case": "图纸替代实体样品",
+    "tags": "复制、副本替代"
+  },
+  "廉价替代": {
+    "id": 27,
+    "name": "廉价替代原理",
+    "name_en": "Cheap Short-Lived Objects",
+    "explain": "廉价易耗品替代贵重物品",
+    "case": "一次性塑料餐盒",
+    "tags": "廉价替换、一次性"
+  },
+  "机械系统替代": {
+    "id": 28,
+    "name": "机械系统替代原理",
+    "name_en": "Mechanics Substitution",
+    "explain": "非机械方案替换机械结构",
+    "case": "电磁门锁替代机械锁",
+    "tags": "非机械、电控替换"
+  },
+  "气动/液压结构": {
+    "id": 29,
+    "name": "气压/液压原理",
+    "name_en": "Pneumatic and Hydraulic",
+    "explain": "气体液体替代固体零件",
+    "case": "液压千斤顶",
+    "tags": "液压、气压传动"
+  },
+  "柔性膜/薄膜": {
+    "id": 30,
+    "name": "柔性壳体/薄膜原理",
+    "name_en": "Flexible Shell or Thin Film",
+    "explain": "柔性薄膜替代刚性结构",
+    "case": "真空收纳袋",
+    "tags": "薄膜、柔性包裹"
+  },
+  "多孔材料": {
+    "id": 31,
+    "name": "多孔材料原理",
+    "name_en": "Porous Material",
+    "explain": "利用多孔结构减重储料",
+    "case": "海绵吸附液体",
+    "tags": "多孔、吸附减重"
+  },
+  "颜色/光学变化": {
+    "id": 32,
+    "name": "颜色改变原理",
+    "name_en": "Color Change",
+    "explain": "改变颜色实现区分/警示",
+    "case": "温变变色贴纸",
+    "tags": "变色、标识警示"
+  },
+  "同质性": {
+    "id": 33,
+    "name": "同质原理",
+    "name_en": "Homogeneity",
+    "explain": "相邻物体选用同种材质",
+    "case": "同材质螺栓螺母",
+    "tags": "同材质、同质配合"
+  },
+  "抛弃/再生": {
+    "id": 34,
+    "name": "抛弃与再生原理",
+    "name_en": "Discard and Recover",
+    "explain": "损耗部件丢弃/自动复原",
+    "case": "可降解塑料",
+    "tags": "丢弃、再生复原"
+  },
+  "参数变化": {
+    "id": 35,
+    "name": "参数变化原理",
+    "name_en": "Parameter Change",
+    "explain": "改变物理参数优化性能",
+    "case": "橡胶硫化改变硬度",
+    "tags": "参数调整、物性变化"
+  },
+  "相变": {
+    "id": 36,
+    "name": "相变原理",
+    "name_en": "Phase Transition",
+    "explain": "物态变化实现能量转换",
+    "case": "冷媒汽化制冷",
+    "tags": "相变、物态转换"
+  },
+  "热膨胀": {
+    "id": 37,
+    "name": "热膨胀原理",
+    "name_en": "Thermal Expansion",
+    "explain": "热胀冷缩实现驱动",
+    "case": "双金属片温控开关",
+    "tags": "热胀冷缩、形变驱动"
+  },
+  "加速氧化": {
+    "id": 38,
+    "name": "强氧化剂原理",
+    "name_en": "Strong Oxidant",
+    "explain": "强化氧化环境提升反应",
+    "case": "富氧燃烧提升效率",
+    "tags": "强氧化、富氧环境"
+  },
+  "惰性环境": {
+    "id": 39,
+    "name": "惰性环境原理",
+    "name_en": "Inert Atmosphere",
+    "explain": "惰性环境隔绝有害反应",
+    "case": "惰性气体保护焊接",
+    "tags": "惰性保护、隔绝反应"
+  },
+  "复合材料": {
+    "id": 40,
+    "name": "复合材料原理",
+    "name_en": "Composite Material",
+    "explain": "多种材料复合获得新特性",
+    "case": "碳纤维复合材料",
+    "tags": "复合材质、混合改性"
+  }
+}

@@ -7,4 +7,7 @@ storage/
 .vscode/ 
 .idea/ 
 .DS_Store 
-Thumbs.db 
+Thumbs.db
+.tmp/
+pip_install.log
+.acl-recovery/ 
