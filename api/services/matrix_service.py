@@ -74,6 +74,106 @@ PARAM_ALIASES = {
     "光照": "光照度",
     "亮度": "光照度",
     "体积": "运动物体的体积",
+    # ---- 工程场景通用词 ----
+    "主频": "速度",
+    "频率": "速度",
+    "转速": "速度",
+    "速率": "速度",
+    "切削速度": "速度",
+    "注塑速度": "速度",
+    "传输速率": "速度",
+    "刷新率": "速度",
+    "节拍": "速度",
+    "跨度": "运动物体的长度",
+    "跨径": "运动物体的长度",
+    "高度": "运动物体的长度",
+    "厚度": "运动物体的长度",
+    "长度": "运动物体的长度",
+    "距离": "运动物体的长度",
+    "行程": "运动物体的长度",
+    "推力": "力",
+    "载荷": "力",
+    "承载": "力",
+    "承载力": "力",
+    "承载能力": "力",
+    "功率": "功率",
+    "电流": "功率",
+    "输出功率": "功率",
+    "充电功率": "功率",
+    "发热": "温度",
+    "温升": "温度",
+    "散热": "温度",
+    "热影响区": "温度",
+    "过热": "温度",
+    "功耗": "运动物体的能耗",
+    "耗电": "运动物体的能耗",
+    "电耗": "运动物体的能耗",
+    "光洁度": "制造精度",
+    "一致性": "制造精度",
+    "表面质量": "制造精度",
+    "加工质量": "制造精度",
+    "制造精度": "制造精度",
+    "抗震": "结构的稳定性",
+    "抗震等级": "结构的稳定性",
+    "稳定性": "结构的稳定性",
+    "稳固": "结构的稳定性",
+    "刚度": "强度",
+    "刚度不足": "强度",
+    "刚性": "强度",
+    "磨损": "运动物体的耐久性",
+    "耐腐蚀": "运动物体的耐久性",
+    "耐用": "运动物体的耐久性",
+    "防水": "可靠性",
+    "可靠": "可靠性",
+    "物料洒落": "物质损失",
+    "洒落": "物质损失",
+    "破损": "物质损失",
+    "浪费": "物质损失",
+    "材料用量": "物质损失",
+    "钢材用量": "物质损失",
+    "用量": "物质损失",
+    "造价": "物质损失",
+    "损耗": "物质损失",
+    "耗时": "时间损失",
+    "工期": "时间损失",
+    "周期": "时间损失",
+    "等待时间": "时间损失",
+    "抛光时间": "时间损失",
+    "固化时间": "时间损失",
+    "调试时间": "时间损失",
+    "装配时间": "时间损失",
+    "翘曲": "形状",
+    "变形": "形状",
+    "采光面积": "运动物体的面积",
+    "采光": "运动物体的面积",
+    "电池容量": "物质数量",
+    "容量": "物质数量",
+    "控制复杂度": "控制的复杂性",
+    "控制复杂性": "控制的复杂性",
+    "控制系统复杂性": "控制的复杂性",
+    "控制系统复杂度": "控制的复杂性",
+    "控制系统": "控制的复杂性",
+    "调试困难": "控制的复杂性",
+    "调试": "控制的复杂性",
+    "控制难度": "控制的复杂性",
+    "复杂度": "系统的复杂性",
+    "自动化程度": "自动化程度",
+    "自动化": "自动化程度",
+    "产能": "生产率",
+    "产量": "生产率",
+    "信号": "信息损失",
+    "信息": "信息损失",
+    "数据丢失": "信息损失",
+    "自重": "运动物体的重量",
+    "机身重量": "运动物体的重量",
+    "整机重量": "运动物体的重量",
+    "结构重量": "运动物体的重量",
+    "照度": "光照度",
+    "光照度": "光照度",
+    "截面尺寸": "运动物体的体积",
+    "截面": "运动物体的体积",
+    "腔体": "运动物体的体积",
+    "容积": "运动物体的体积",
 }
 
 # 数字前缀里常见的「模型自定义编号 -> 标准 ID」历史映射。
@@ -90,6 +190,24 @@ LEGACY_ID_HINTS = {
 }
 
 _BRACKET_RE = re.compile(r"[（(][^）)]*[）)]")
+_LEADING_VERBS_RE = re.compile(
+    r"^(?:提高|增加|增大|加强|提升|减少|降低|减小|缩短|减轻|加快|延长|扩大|缩小|优化|改善|加速|变长|变短|变大|变小)+"
+)
+_TRAILING_STATES_RE = re.compile(
+    r"(?:变长|变短|变大|变小|增加|下降|上升|加剧|不足|困难|严重|明显|变差|降低|提高)+$"
+)
+
+# 参数语义簇：精确组合查不到时，用同簇参数做近似推荐
+PARAM_CLUSTERS = [
+    [1, 2, 3, 4, 5, 6, 7, 8],          # 重量/尺寸/面积/体积
+    [9, 10, 19, 20, 21, 22],           # 速度/力/能耗/功率/能量损失
+    [11, 13, 14, 15, 16],              # 应力/稳定性/强度/耐久性
+    [12, 17, 18],                      # 形状/温度/光照
+    [23, 24, 25, 26],                  # 物质/信息/时间损失/物质数量
+    [27, 28, 29],                      # 可靠性/测量精度/制造精度
+    [30, 31, 32, 33, 34, 35],          # 有害因素/可制造/操作/维护/适应性
+    [36, 37, 38, 39],                  # 系统复杂性/控制复杂性/自动化/生产率
+]
 
 
 class MatrixService:
@@ -101,6 +219,7 @@ class MatrixService:
         self._load_data()
         self._load_principles_detail()
         self._name_to_id = {name: pid for pid, name in self.parameters.items()}
+        self._neighbors = self._build_neighbors()
 
     # ==================== 数据加载 ====================
 
@@ -131,6 +250,8 @@ class MatrixService:
         text = text.strip()
         text = text.replace("（", "(").replace("）", ")")
         text = _BRACKET_RE.sub("", text)
+        text = _LEADING_VERBS_RE.sub("", text)
+        text = _TRAILING_STATES_RE.sub("", text)
         text = text.strip(" \t\r\n。．，、：；!！?？-—－_")
         return text
 
@@ -142,6 +263,17 @@ class MatrixService:
     def _alias(self, name: str) -> Optional[str]:
         target = PARAM_ALIASES.get(name)
         if target:
+            pid = self._exact(target)
+            if pid:
+                return pid
+        # 包含式别名：取最长的命中词，避免「控制复杂度」被「复杂度」抢走
+        matches = [
+            (len(key), value)
+            for key, value in PARAM_ALIASES.items()
+            if len(key) >= 2 and key in name
+        ]
+        if matches:
+            _, target = max(matches)
             pid = self._exact(target)
             if pid:
                 return pid
@@ -215,6 +347,15 @@ class MatrixService:
 
     # ==================== 矩阵与原理 ====================
 
+    def _build_neighbors(self) -> Dict[str, set]:
+        neighbors = {name: set() for name in self.parameters.values()}
+        for cluster in PARAM_CLUSTERS:
+            names = [self.parameters.get(str(pid), "") for pid in cluster]
+            names = [name for name in names if name]
+            for name in names:
+                neighbors[name].update(n for n in names if n != name)
+        return neighbors
+
     def get_principle_detail(self, principle_name: str) -> Dict:
         return self.principles_detail.get(principle_name, {})
 
@@ -237,6 +378,62 @@ class MatrixService:
             )
         return items
 
+    def _suggestions(self, improve_name: str, worsen_name: str) -> Dict[str, List[Dict]]:
+        """精确和近似都查不到时，给出可点击的相邻参数建议。"""
+
+        def side_candidates(name: str, index: int) -> List[Dict]:
+            counts: Dict[str, int] = {}
+            for key in self.matrix:
+                candidate = key.split("_")[index]
+                if candidate in self._neighbors.get(name, set()):
+                    counts[candidate] = counts.get(candidate, 0) + 1
+            return [
+                {"name": candidate, "id": self._name_to_id[candidate], "组合数": count}
+                for candidate, count in sorted(
+                    counts.items(), key=lambda item: (-item[1], item[0])
+                )[:3]
+            ]
+
+        return {
+            "改善参数建议": side_candidates(improve_name, 0),
+            "恶化参数建议": side_candidates(worsen_name, 1),
+        }
+
+    def _approximate(self, improve_name: str, worsen_name: str):
+        """用同簇参数做近似匹配，返回 (命中组合, 聚合后的原理 ID)。"""
+        improve_neighbors = self._neighbors.get(improve_name, set())
+        worsen_neighbors = self._neighbors.get(worsen_name, set())
+
+        scored = []
+        for key, ids in self.matrix.items():
+            improve_candidate, worsen_candidate = key.split("_")
+            if improve_candidate == improve_name and worsen_candidate == worsen_name:
+                continue
+            if improve_candidate in improve_neighbors and worsen_candidate == worsen_name:
+                score = 3
+            elif improve_candidate == improve_name and worsen_candidate in worsen_neighbors:
+                score = 3
+            elif improve_candidate in improve_neighbors and worsen_candidate in worsen_neighbors:
+                score = 2
+            else:
+                continue
+            scored.append((score, key, ids))
+
+        if not scored:
+            return [], []
+
+        scored.sort(key=lambda item: (-item[0], item[1]))
+        top = scored[:3]
+        weights: Dict[int, int] = {}
+        for score, _, ids in top:
+            for rank, pid in enumerate(ids):
+                weights[pid] = weights.get(pid, 0) + score * (len(ids) - rank)
+        ordered = [
+            pid
+            for pid, _ in sorted(weights.items(), key=lambda item: (-item[1], item[0]))
+        ][:5]
+        return [{"组合": key, "原理ID": ids} for _, key, ids in top], ordered
+
     def get_recommendation(self, improve: str, worsen: str) -> Dict:
         improve_id = self.get_param_id(improve)
         worsen_id = self.get_param_id(worsen)
@@ -251,6 +448,9 @@ class MatrixService:
                 "推荐原理名称": [],
                 "推荐原理详情": [],
                 "是否有匹配": False,
+                "匹配类型": "未命中",
+                "近似组合": [],
+                "替代建议": {},
             }
 
         improve_name = self.get_param_name(improve_id)
@@ -264,15 +464,49 @@ class MatrixService:
                 matched = True
                 break
 
+        if matched:
+            return {
+                "改善参数": improve_name,
+                "恶化参数": worsen_name,
+                "改善参数ID": improve_id,
+                "恶化参数ID": worsen_id,
+                "推荐原理ID": principle_ids,
+                "推荐原理名称": self.get_principles_by_ids(principle_ids),
+                "推荐原理详情": self.get_principle_items(principle_ids),
+                "是否有匹配": True,
+                "匹配类型": "精确",
+                "近似组合": [],
+                "替代建议": {},
+            }
+
+        near_combos, near_ids = self._approximate(improve_name, worsen_name)
+        if near_ids:
+            return {
+                "改善参数": improve_name,
+                "恶化参数": worsen_name,
+                "改善参数ID": improve_id,
+                "恶化参数ID": worsen_id,
+                "推荐原理ID": near_ids,
+                "推荐原理名称": self.get_principles_by_ids(near_ids),
+                "推荐原理详情": self.get_principle_items(near_ids),
+                "是否有匹配": True,
+                "匹配类型": "近似",
+                "近似组合": near_combos,
+                "替代建议": self._suggestions(improve_name, worsen_name),
+            }
+
         return {
             "改善参数": improve_name,
             "恶化参数": worsen_name,
             "改善参数ID": improve_id,
             "恶化参数ID": worsen_id,
-            "推荐原理ID": principle_ids,
-            "推荐原理名称": self.get_principles_by_ids(principle_ids),
-            "推荐原理详情": self.get_principle_items(principle_ids),
-            "是否有匹配": matched,
+            "推荐原理ID": [],
+            "推荐原理名称": [],
+            "推荐原理详情": [],
+            "是否有匹配": False,
+            "匹配类型": "未命中",
+            "近似组合": [],
+            "替代建议": self._suggestions(improve_name, worsen_name),
         }
 
     def get_all_parameters(self) -> Dict[str, str]:

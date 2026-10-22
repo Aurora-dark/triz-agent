@@ -3,7 +3,7 @@ import json
 import re
 from openai import AsyncOpenAI
 
-from ..config import LLM_CONFIG, TRIZ_SYSTEM_PROMPT
+from ..config import ASPECT_SYSTEM_PROMPT, LLM_CONFIG, TRIZ_SYSTEM_PROMPT
 from .matrix_service import matrix_service
 
 
@@ -60,10 +60,37 @@ class LLMClient:
         )
         return self._parse_json(response.choices[0].message.content)
 
-    async def extract_contradiction(
-        self, requirement_text: str, model_config: dict = None
+    async def extract_aspects(self, requirement_text: str, model_config: dict) -> dict:
+        """第一阶段：抽取「改善方面 / 恶化方面」的自由文本描述。"""
+        messages = [
+            {"role": "system", "content": ASPECT_SYSTEM_PROMPT},
+            {"role": "user", "content": requirement_text},
+        ]
+        result = await self._request(messages, model_config)
+        return result if isinstance(result, dict) else {}
+
+    def _map_aspects(self, aspects: dict):
+        """第二阶段：把自由文本方面映射到 39 个标准参数，失败返回 None。"""
+        improve_raw = str(aspects.get("改善方面", "") or "").strip()
+        worsen_raw = str(aspects.get("恶化方面", "") or "").strip()
+        improve_id = matrix_service.get_param_id(improve_raw)
+        worsen_id = matrix_service.get_param_id(worsen_raw)
+        if not improve_id or not worsen_id or improve_id == worsen_id:
+            return None
+        improve_name = matrix_service.get_param_name(improve_id)
+        worsen_name = matrix_service.get_param_name(worsen_id)
+        return {
+            "原始需求": aspects.get("原始需求", ""),
+            "改善参数": f"{improve_id}. {improve_name}",
+            "恶化参数": f"{worsen_id}. {worsen_name}",
+            "矛盾描述": f"如果提升{improve_name}，则会导致{worsen_name}变差",
+            "是否需要补充信息": False,
+        }
+
+    async def _extract_direct(
+        self, requirement_text: str, model_config: dict
     ) -> dict:
-        config = model_config or {}
+        """兜底：让模型直接从 39 个标准参数中选择（带一次纠错重试）。"""
         messages = [
             {"role": "system", "content": TRIZ_SYSTEM_PROMPT},
             {"role": "user", "content": requirement_text},
@@ -73,7 +100,7 @@ class LLMClient:
         errors = []
         for attempt in range(2):
             try:
-                result = await self._request(messages, config)
+                result = await self._request(messages, model_config)
             except (json.JSONDecodeError, ValueError):
                 result = {}
                 errors = ["模型输出不是合法 JSON"]
@@ -103,12 +130,40 @@ class LLMClient:
                         ),
                     },
                 ]
-                config = {**config, "temperature": 0.0}
+                model_config = {**model_config, "temperature": 0.0}
 
         # 重试后仍不合法：保留原始输出并明确提示需要补充信息
         result["是否需要补充信息"] = True
         result["矛盾描述"] = "模型输出无法匹配标准参数：" + "；".join(errors)
         return result
+
+    async def extract_contradiction(
+        self, requirement_text: str, model_config: dict = None
+    ) -> dict:
+        config = model_config or {}
+
+        # 第一阶段：先抽自由文本方面；成功映射就不需要模型再做 39 选 1
+        try:
+            aspects = await self.extract_aspects(requirement_text, config)
+        except (json.JSONDecodeError, ValueError):
+            aspects = {}
+
+        mapped = self._map_aspects(aspects)
+        if mapped:
+            mapped["原始需求"] = requirement_text
+            return mapped
+
+        if aspects.get("是否需要补充信息"):
+            return {
+                "原始需求": requirement_text,
+                "改善参数": "",
+                "恶化参数": "",
+                "矛盾描述": "需求中没有识别到明确的技术矛盾",
+                "是否需要补充信息": True,
+            }
+
+        # 兜底：两阶段映射失败时，仍走原来的直接分类路径
+        return await self._extract_direct(requirement_text, config)
 
 
 llm_client = LLMClient()

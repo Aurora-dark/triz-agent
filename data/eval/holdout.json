@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "note": "留出集：在调参和扩同义词之后新建，未用于调优，用于估计泛化准确率。",
+  "cases": [
+    {"id": "H01", "sector": "工艺", "text": "提高冲压速度，但板料回弹更难控制", "improve": "速度", "worsen": "制造精度", "accept_worsen": ["形状"]},
+    {"id": "H02", "sector": "电子", "text": "缩小连接器间距，但绝缘可靠性下降", "improve": "运动物体的长度", "worsen": "可靠性"},
+    {"id": "H03", "sector": "结构", "text": "增加冰箱保温层厚度，但内部容积变小", "improve": "运动物体的长度", "worsen": "运动物体的体积"},
+    {"id": "H04", "sector": "机械", "text": "提高列车运行速度，但制动距离变长", "improve": "速度", "worsen": "运动物体的长度", "accept_worsen": ["时间损失"]},
+    {"id": "H05", "sector": "工艺", "text": "提高注塑模温，但冷却时间变长", "improve": "温度", "worsen": "时间损失"},
+    {"id": "H06", "sector": "机械", "text": "减小齿轮模数，但承载能力下降", "improve": "运动物体的体积", "worsen": "力"},
+    {"id": "H07", "sector": "结构", "text": "提高仓库货架高度，但取货时间变长", "improve": "运动物体的长度", "worsen": "时间损失"},
+    {"id": "H08", "sector": "机械", "text": "提高电机转速，但电刷磨损加快", "improve": "速度", "worsen": "运动物体的耐久性"},
+    {"id": "H09", "sector": "结构", "text": "减少车身钢板厚度以减重，但碰撞安全性下降", "improve": "运动物体的重量", "worsen": "强度", "accept_improve": ["运动物体的长度"]},
+    {"id": "H10", "sector": "工艺", "text": "提高烘干温度以缩短时间，但涂层开裂", "improve": "温度", "worsen": "形状"}
+  ]
+}

@@ -10,4 +10,8 @@ storage/
 Thumbs.db
 .tmp/
 pip_install.log
+.pytest_cache/
+pytest-cache-files-*/
+data/eval/last_run.json
+data/eval/last_holdout.json
 .acl-recovery/ 

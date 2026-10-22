@@ -438,6 +438,34 @@
             color: #00337a;
         }
 
+        /* ---------- 近似匹配提示 ---------- */
+        .near-note {
+            margin-top: 10px;
+            padding: 8px 12px;
+            background: #fff8e1;
+            border-left: 4px solid #ffc107;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: #8a6d3b;
+            line-height: 1.6;
+        }
+
+        .suggest-list {
+            margin-top: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .suggest-chip {
+            background: #eef4ff;
+            border: 1px solid #cce0ff;
+            color: #0044cc;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
         /* ---------- 历史记录 ---------- */
         .history-area .search-box {
             display: flex;
@@ -746,6 +774,12 @@
                             <div style="margin-top:6px; font-size:0.8rem; color:#6f8fc0;">
                                 ${result.改善参数} → ${result.恶化参数}
                             </div>
+                            ${result.匹配类型 === '近似' ? `
+                                <div class="near-note">
+                                    <i class="fas fa-info-circle"></i> 未找到精确组合，已按语义相邻参数做近似推荐：
+                                    ${(result.近似组合 || []).map(item => item.组合).join('、')}
+                                </div>
+                            ` : ''}
                             ${details.map(p => `
                                 <details class="principle-item">
                                     <summary>原理 ${p.id} · ${p.name}</summary>
@@ -784,13 +818,22 @@
                         </div>
                     `;
                 } else {
+                    const suggestion = result.替代建议 || {};
+                    const chips = [];
+                    (suggestion.改善参数建议 || []).forEach(item => {
+                        chips.push(`<span class="suggest-chip">改善：${item.id}. ${item.name}</span>`);
+                    });
+                    (suggestion.恶化参数建议 || []).forEach(item => {
+                        chips.push(`<span class="suggest-chip">恶化：${item.id}. ${item.name}</span>`);
+                    });
                     container.innerHTML = `
                         <div style="background:#fff3cd; padding:14px 18px; border-radius:12px; border-left:4px solid #ffc107;">
-                            <span style="color:#856404;">😕 未找到精确匹配</span>
+                            <span style="color:#856404;">😕 未找到可用的参数组合</span>
                             <div style="font-size:0.85rem; margin-top:6px; color:#6f8fc0;">
-                                请使用 39 个标准参数名，例如：<br/>
-                                改善参数：19. 运动物体的能耗<br/>
-                                恶化参数：1. 运动物体的重量
+                                请使用 39 个标准参数名，或试试下面的相邻参数：
+                            </div>
+                            <div class="suggest-list">
+                                ${chips.length ? chips.join('') : '<span class="suggest-chip">19. 运动物体的能耗</span><span class="suggest-chip">1. 运动物体的重量</span>'}
                             </div>
                         </div>
                     `;
